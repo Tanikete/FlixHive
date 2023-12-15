@@ -1,37 +1,34 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 import modelOptions from "./model.options.js";
 
 export default mongoose.model(
   "Review",
   mongoose.Schema({
     user: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: Schema.Types.ObjectId,
       ref: "User",
-      required: true,
+      required: true
     },
     content: {
       type: String,
-      required: true,
+      required: true
     },
     mediaType: {
       type: String,
-      required: true,
-      enum: ["movie", "tv"],
+      enum: ["tv", "movie"],
+      required: true
     },
     mediaId: {
-      type: Number,
-      required: true,
+      type: String,
+      required: true
     },
     mediaTitle: {
       type: String,
-      required: true,
+      required: true
     },
     mediaPoster: {
       type: String,
-      required: true,
+      required: true
     },
-  }),
-  modelOptions
+  }, modelOptions)
 );
-
-

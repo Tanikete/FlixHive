@@ -3,7 +3,7 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import http from 'http';
 import mongoose from 'mongoose';
-import dotenv from 'dotenv/config';
+import "dotenv/config";
 import routes from './src/routes/index.js';
 
 
@@ -18,7 +18,7 @@ app.use(cookieParser());
 
 app.use('/api/v1', routes);
 
-const port = process.env.PORT || 5001;
+const port = process.env.PORT || 5005;
 
 
 const server = http.createServer(app);
