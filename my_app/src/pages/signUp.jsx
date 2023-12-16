@@ -6,6 +6,7 @@ import header from '../components/header'
 export default function signUp() {
   return <Container>
     <backgroundImg />
+    <div className="content">
     <header />
     <div className="Body flex column a-center j-center">
         <div className="text flex column">
@@ -16,7 +17,24 @@ export default function signUp() {
         <div className="form">
             <input type="email" placeholder='Email Adddress' name='email' />
             <input type="password" placeholder='Password' name='password' />
+            <button>Get Started</button>
         </div>
+            <button>Log In</button>
+    </div>
     </div>
     </Container>  
 }
+
+const Container = styled.div `
+    position: relative;
+    .content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0,0,0,0.5);
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        grid-template-rows: 15vh 85vh;
+    }
+`;
