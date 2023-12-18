@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Netflix from "./pages/netflix"; 
+import FlixHive from "./pages/flixHive"; 
 import Login from "./pages/login"; 
 import SignUp from "./pages/signUp";
 
@@ -9,7 +9,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Netflix />} />
+        <Route path="/" element={<FlixHive />} />
         <Route path="/signUp" element={<SignUp />} />
       </Routes>
     </BrowserRouter>
