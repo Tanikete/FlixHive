@@ -142,7 +142,7 @@ dist
 .svelte-kit
 
 # Api keys
-.my_app/src/utils/constants.js
+/my_app/src/utils/constants.js
 
 # End of https://www.toptal.com/developers/gitignore/api/node
 
