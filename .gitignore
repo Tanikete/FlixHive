@@ -141,4 +141,8 @@ dist
 # SvelteKit build / generate output
 .svelte-kit
 
+# Api keys
+./FlixHive/my_app/src/utils/constants.js
+
 # End of https://www.toptal.com/developers/gitignore/api/node
+
