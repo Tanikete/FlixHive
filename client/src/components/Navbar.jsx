@@ -90,13 +90,56 @@ const Container = styled.div`
       .links {
         list-style-type: none;
         gap: 2rem;
+      
         li {
           a {
-            color: white;
+            position: relative;
+            color: transparent;
             text-decoration: none;
             font-size: 1.2rem;
+            background: linear-gradient(to right, #ff8c00, #ff4d4d);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: color 0.3s ease, background-position 0.3s ease;
+        
+            /* Make the text visible through the gradient */
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        
+            /* Adjust background position to control the gradient effect */
+            background-size: 200% 100%;
+            background-position: 100% 0;
+        
+            /* Hover effect: Slide in the underline from left to right */
+            &:hover {
+              background-position: 0 0;
+            }
+        
+            /* Underline effect */
+            &::before {
+              content: '';
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              height: 2px; /* Adjust the height of the underline */
+              background-color: orange; /* Change the color of the underline */
+              transform: scaleX(0); /* Initial state: invisible */
+              transform-origin: bottom right;
+              transition: transform 0.3s ease;
+            }
+        
+            &:hover::before {
+              transform: scaleX(1); /* Hover state: visible */
+              transform-origin: bottom left;
+            }
           }
         }
+        
+        
+        
+        
       }
     }
     .right {
