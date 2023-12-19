@@ -11,6 +11,6 @@ mongoose.connect('mongodb://localhost:27017/FlixHive')
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
 
-app.use("/api/user", userRoutes);
+app.use("/", userRoutes);
 
 app.listen(5000, () => console.log('Server Running'));
