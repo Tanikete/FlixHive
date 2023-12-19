@@ -5,6 +5,7 @@ import styled from "styled-components";
 import logo from "../assets/logo.png";
 import { firebaseAuth } from "../utils/firebase-config";
 import { FaPowerOff, FaSearch } from "react-icons/fa";
+
 export default function Navbar({ isScrolled }) {
   const [showSearch, setShowSearch] = useState(false);
   const [inputHover, setInputHover] = useState(false);
@@ -136,10 +137,6 @@ const Container = styled.div`
             }
           }
         }
-        
-        
-        
-        
       }
     }
     .right {
@@ -195,6 +192,46 @@ const Container = styled.div`
           opacity: 1;
           visibility: visible;
           padding: 0.3rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    nav {
+      padding: 0 2rem;
+      .left {
+        .brand {
+          img {
+            height: 3rem;
+          }
+        }
+        .links {
+          li {
+            a {
+              font-size: 1rem;
+              padding: 0.3rem 0.6rem;
+            }
+          }
+        }
+      }
+      .right {
+        button {
+          svg {
+            font-size: 1rem;
+          }
+        }
+        .search {
+          padding: 0.1rem;
+          padding-left: 0.3rem;
+          button {
+            svg {
+              font-size: 1rem;
+            }
+          }
+          input {
+            padding: 0.2rem;
+          }
         }
       }
     }
