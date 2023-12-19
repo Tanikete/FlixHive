@@ -81,7 +81,7 @@ export const getUsersLikedMovies = createAsyncThunk(
   async (email) => {
     const {
       data: { movies },
-    } = await axios.get(`https://flix-hive.vercel.app/liked/${email}`);
+    } = await axios.get(`http://localhost:5000/api/user/liked/${email}`);
     return movies;
   }
 );
@@ -91,7 +91,7 @@ export const removeMovieFromLiked = createAsyncThunk(
   async ({ movieId, email }) => {
     const {
       data: { movies },
-    } = await axios.put("https://flix-hive.vercel.app/remove", {
+    } = await axios.put("http://localhost:5000/api/user/remove", {
       email,
       movieId,
     });
