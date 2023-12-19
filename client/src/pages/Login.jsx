@@ -96,26 +96,6 @@ const Container = styled.div`
       }
     }
   }
-
-  @media (max-width: 768px) {
-    .content {
-      .form-container {
-        .form {
-          width: 80vw;
-        }
-      }
-    }
-  }
-
-  @media (max-width: 480px) {
-    .content {
-      .form-container {
-        .form {
-          width: 90vw;
-        }
-      }
-    }
-  }
 `;
 
 export default Login;
