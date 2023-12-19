@@ -8,6 +8,6 @@ const {
   
   router.get("/liked/:email", getLikedMovies);
   router.post("/add", addToLikedMovies);
-  router.delete("/remove", removeFromLikedMovies);
+  router.put("/remove", removeFromLikedMovies);
   
   module.exports = router;
