@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect('mongodb://localhost:27017/FlixHive')
+mongoose.connect('mongodb+srv://awushu6:3XR2zB1vEvLHuSLD@yu.lkumhgt.mongodb.net/')
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
 
