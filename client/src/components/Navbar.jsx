@@ -276,4 +276,43 @@ const Container = styled.div`
       }
     }
   }
+@media (max-width: 320px) {
+  nav {
+    padding: 0 0.5rem;
+    .left {
+      .brand {
+        img {
+          height: 2rem;
+        }
+      }
+      .links {
+        li {
+          a {
+            font-size: 0.7rem;
+            padding: 0.1rem 0.3rem;
+          }
+        }
+      }
+    }
+    .right {
+      button {
+        svg {
+          font-size: 0.7rem;
+        }
+      }
+      .search {
+        padding: 0.1rem;
+        padding-left: 0.1rem;
+        button {
+          svg {
+            font-size: 0.7rem;
+          }
+        }
+        input {
+          padding: 0.1rem;
+        }
+      }
+    }
+  }
+}
 `;
