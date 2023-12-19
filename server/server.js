@@ -15,6 +15,6 @@ mongoose.connect(process.env.MONGODB_URL)
   .catch(err => console.error('MongoDB Connection Error:', err));
 
 
-app.use("/api/user", userRoutes);
+app.use("/", userRoutes);
 
 app.listen(5000, () => console.log('Server Running'));
