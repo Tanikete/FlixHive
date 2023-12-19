@@ -236,4 +236,44 @@ const Container = styled.div`
       }
     }
   }
+
+  @media (max-width: 480px) {
+    nav {
+      padding: 0 1rem;
+      .left {
+        .brand {
+          img {
+            height: 2.5rem;
+          }
+        }
+        .links {
+          li {
+            a {
+              font-size: 0.8rem;
+              padding: 0.2rem 0.4rem;
+            }
+          }
+        }
+      }
+      .right {
+        button {
+          svg {
+            font-size: 0.8rem;
+          }
+        }
+        .search {
+          padding: 0.1rem;
+          padding-left: 0.2rem;
+          button {
+            svg {
+              font-size: 0.8rem;
+            }
+          }
+          input {
+            padding: 0.1rem;
+          }
+        }
+      }
+    }
+  }
 `;
