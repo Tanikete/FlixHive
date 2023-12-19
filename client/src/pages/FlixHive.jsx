@@ -12,7 +12,6 @@ import { fetchMovies, getGenres } from "../store";
 import { FaPlay } from "react-icons/fa";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import Slider from "../components/Slider";
-
 function FlixHive() {
   const [isScrolled, setIsScrolled] = useState(false);
   const movies = useSelector((state) => state.flixhive.movies);
@@ -84,7 +83,6 @@ const Container = styled.div`
     img {
       height: 100vh;
       width: 100vw;
-      object-fit: cover; /* Added to make the image responsive */
     }
     .container {
       position: absolute;
@@ -94,7 +92,6 @@ const Container = styled.div`
           width: 100%;
           height: 100%;
           margin-left: 5rem;
-          max-width: 400px; /* Added to limit the logo size on smaller devices */
         }
       }
       .buttons {
