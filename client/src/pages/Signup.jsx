@@ -107,6 +107,16 @@ const Container = styled.div`
           padding: 0 25rem;
         }
       }
+      @media (max-width: 768px) {
+        .text {
+          gap: 1rem;
+          text-align: center;
+          font-size: .5rem;
+          h1 {
+            padding: 0 2rem;
+          }
+        }
+      }
       
       .text.flex.column {
         background: linear-gradient(90deg, rgba(131,58,180,1) 11%, rgba(252,176,69,1) 47%, rgba(145,29,253,0.835171568627451) 76%);
