@@ -8,20 +8,26 @@ import styled from "styled-components";
 import BackgroundImage from "../components/BackgroundImage";
 import Header from "../components/Header";
 import { firebaseAuth } from "../utils/firebase-config";
+
 function Signup() {
   const [showPassword, setShowPassword] = useState(false);
   const [formValues, setFormValues] = useState({
     email: "",
     password: "",
   });
+  const [error, setError] = useState(null); // Add error state
   const navigate = useNavigate();
 
   const handleSignIn = async () => {
     try {
       const { email, password } = formValues;
+      if (!email || !password) {
+        setError("Please enter a valid email and password."); // Set error message
+        return;
+      }
       await createUserWithEmailAndPassword(firebaseAuth, email, password);
     } catch (error) {
-      console.log(error);
+      setError("An error occurred. Please try again."); // Set error message
     }
   };
 
@@ -39,7 +45,7 @@ function Signup() {
             <h1>Unlock a world of endless entertainment! Explore a vast library of movies, TV shows, and more. </h1>
             {/* <h4>Enjoy the freedom to watch whenever, wherever. No commitments – cancel anytime. Ready to dive in?</h4> */}
             <h6>
-            Enter your email to start your subscription adventure.
+              Enter your email to start your subscription adventure.
             </h6>
           </div>
           <div className="form">
@@ -74,12 +80,12 @@ function Signup() {
             )}
           </div>
           {showPassword && <button onClick={handleSignIn}>Log In</button>}
+          {error && <p>{error}</p>}
         </div>
       </div>
     </Container>
   );
 }
-
 const Container = styled.div`
   position: relative;
   .content {
@@ -102,13 +108,18 @@ const Container = styled.div`
         }
       }
       
+      .text.flex.column {
+        background: linear-gradient(90deg, rgba(131,58,180,1) 11%, rgba(252,176,69,1) 47%, rgba(145,29,253,0.835171568627451) 76%);
+        -webkit-background-clip: text; /* WebKit/Blink browsers */
+        color: transparent;
+      }
+      @media (max-width: 768px) {
         .text.flex.column {
           background: linear-gradient(90deg, rgba(131,58,180,1) 11%, rgba(252,176,69,1) 47%, rgba(145,29,253,0.835171568627451) 76%);
           -webkit-background-clip: text; /* WebKit/Blink browsers */
           color: transparent;
         }
-        
-      
+      }
       
       .form {
         display: grid;
@@ -144,6 +155,22 @@ const Container = styled.div`
         border-radius: 0.2rem;
         font-weight: bolder;
         font-size: 1.05rem;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .content {
+      .body {
+        .text {
+          h1 {
+            padding: 0 2rem;
+          }
+        }
+        .form {
+          grid-template-columns: 1fr;
+          width: 80%;
+        }
       }
     }
   }

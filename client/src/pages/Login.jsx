@@ -11,12 +11,14 @@ import { firebaseAuth } from "../utils/firebase-config";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = async () => {
     try {
       await signInWithEmailAndPassword(firebaseAuth, email, password);
     } catch (error) {
+      setError("Invalid email or password");
       console.log(error.code);
     }
   };
@@ -49,6 +51,7 @@ function Login() {
                 value={password}
               />
               <button onClick={handleLogin}>Login to your account</button>
+              {error && <p>{error}</p>}
             </div>
           </div>
         </div>
@@ -96,6 +99,6 @@ const Container = styled.div`
       }
     }
   }
-`;
+}`;
 
 export default Login;
